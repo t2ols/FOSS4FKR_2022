@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Use correct character set. -->
+    <meta charset="utf-8" />
+    <!-- Tell IE to use the latest, best version. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
+    />
+    <title>Hello World!</title>
+    <script src="CesiumViewer/Build/Cesium/Cesium.js"></script>
+    <style>
+      @import url(CesiumViewer/Build/Cesium/Widgets/widgets.css);
+      html,
+      body,
+      #cesiumContainer {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cesiumContainer"></div>
+    <script>
+      const viewer = new Cesium.Viewer("cesiumContainer");
+    </script>
+    <script type="text/javascript">
+
+        // const viewer = window.cesiumViewer;
+        let layers = viewer.imageryLayers;
+        var wmsPath = '/data/output/d6a9ec52-2efd-42e8-a402-e912d9e3c6bf'
+        var wmsObj = new Cesium.TileMapServiceImageryProvider({
+            url: wmsPath
+        });
+        var rtnObj = layers.addImageryProvider(wmsObj);
+        viewer.flyTo(rtnObj);
+        
+        </script>
+  </body>
+</html>
