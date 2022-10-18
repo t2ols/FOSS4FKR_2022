@@ -23,6 +23,10 @@ dxf2wms
 
    GeoServer
 
+샘플 DXF 출처
+    국토정보플랫폼-국토정보맵 ( EPSG:5186 )
+
+
 DXF 2 GPKG ( All layer Point(Text), Line, Poly )
 
 
