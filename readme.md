@@ -21,6 +21,8 @@ dxf2wms
    osgeorun.bat
       PYTHON, QGIS, GDAL, QT
 
-DXF 2 GPkG ( All layer Point(Text), Line, Poly )
+   GeoServer
+
+DXF 2 GPKG ( All layer Point(Text), Line, Poly )
 
 
