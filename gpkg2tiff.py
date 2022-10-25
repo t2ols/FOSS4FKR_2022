@@ -2,7 +2,8 @@ import os
 import sys
 import json
 
-sys.path.append('C:/OSGeo4W/apps/qgis/python/plugins')
+# sys.path.append('C:/OSGeo4W/apps/qgis/python/plugins')
+sys.path.append( f"{os.environ['QGIS_PLUGIN']}" )
 
 from qgis.core import QgsApplication, QgsProcessingFeedback, QgsProject, QgsVectorLayer
 import PyQt5.QtCore
@@ -54,7 +55,7 @@ def gpkg2tiff(gpkg, outputFile, epsg) :
 
 if __name__ == "__main__":    
     
-    sys.argv = ['gpkg2tiff', './data/output/d6a9ec52-2efd-42e8-a402-e912d9e3c6bf.gpkg', './data//output/d6a9ec52-2efd-42e8-a402-e912d9e3c6bf.tiff', '5186']
+    sys.argv = ['gpkg2tiff', './data/output/a77bbd12-7ed9-45cd-b862-6610bc894348.gpkg', './data//output/a77bbd12-7ed9-45cd-b862-6610bc894348.tiff', '5186']
 
     inputGPKG = sys.argv[1]
     outputFile = sys.argv[2]

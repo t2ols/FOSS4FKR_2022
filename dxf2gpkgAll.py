@@ -11,7 +11,9 @@ from clsDXFTools import ProjDaten4Dat, ifAscii, tr, attTableEdit,  DecodeDXFUTF
 qgs = QgsApplication([], False)
 qgs.initQgis()
 
-sys.path.append('C:/OSGeo4W/apps/qgis/python/plugins')
+# sys.path.append('C:/OSGeo4W/apps/qgis/python/plugins')
+sys.path.append( f"{os.environ['QGIS_PLUGIN']}" )
+
 import processing
 from processing.core.Processing import Processing
 
@@ -692,10 +694,17 @@ def cleanTempFiles(output):
         except Exception:
             pass
 
+def createFolder(directory):
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' + directory)
 
 if __name__ == "__main__":        
     sys.argv = ['dxf2wms', './sample/kintex1.dxf', './data/output', '5186']
-
+    createFolder('./data/output')
+    
     inputDXF = sys.argv[1]
     outputFolder = sys.argv[2]
     srs_epsg = sys.argv[3]

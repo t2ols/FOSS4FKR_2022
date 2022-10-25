@@ -5,6 +5,7 @@ SET OSGEO4W_ROOT=C:\OSGeo4W
 SET QGISNAME=qgis
 SET QGIS=%OSGEO4W_ROOT%\apps\%QGISNAME%
 set QGIS_PREFIX_PATH=%QGIS%
+SET QGIS_PLUGIN=%QGIS%\python\plugins
 
 REM Gdal Setup
 set GDAL_DATA=%OSGEO4W_ROOT%\share\gdal\
@@ -18,7 +19,7 @@ set PYTHONPATH=%QGIS%\python;%PYTHONHOME%
 rem Qt Setup Set VSI cache to be used as buffer, see #6448
 rem from C:\OSGeo4W\etc\ini\qt5.bat
 
-path %OSGEO4W_ROOT%\bin;%QGIS%\bin;%PYTHONPATH%;%OSGEO4W_ROOT%\apps\qt5\bin;%PATH%
+path %OSGEO4W_ROOT%\bin;%QGIS%\bin;%PYTHONPATH%;%OSGEO4W_ROOT%\apps\qt5\bin;%PATH%;%QGIS_PLUGIN%
 
 set QT_PLUGIN_PATH=%OSGEO4W_ROOT%\apps\Qt5\plugins
 
